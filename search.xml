@@ -8,9 +8,21 @@
       <link href="/2022/07/12/a/"/>
       <url>/2022/07/12/a/</url>
       
-        <content type="html"><![CDATA[<p>我很vegetable</p><p>$ \begin{vmatrix}<br>a &amp; b \<br>c &amp; d<br>\end{vmatrix} $</p>]]></content>
+        <content type="html"><![CDATA[<p>我很vegetable</p><p>$ \theta $</p>]]></content>
       
       
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     
