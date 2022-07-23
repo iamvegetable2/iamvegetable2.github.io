@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>todo_list</title>
+      <link href="/2022/07/23/todo-list/"/>
+      <url>/2022/07/23/todo-list/</url>
+      
+        <content type="html"><![CDATA[<h1>Todo List</h1><ul><li>英语，水平先和初中生同步</li><li>CSAPP学习与实验</li><li>整理本学期部分课程资料，如逆向，密码学，编译原理，漏洞，概率论（大概）</li><li>机器学习</li><li>整理项目代码</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> todo_list </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2022逆向期末试题</title>
       <link href="/2022/07/16/re2022/"/>
       <url>/2022/07/16/re2022/</url>
