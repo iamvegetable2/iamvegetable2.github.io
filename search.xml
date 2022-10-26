@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>TODO_list</title>
+      <link href="/2022/10/TODO-list/"/>
+      <url>/2022/10/TODO-list/</url>
+      
+        <content type="html"><![CDATA[<p>访问速度不知道咋样，可能考虑挂个CDN<br>大概会再补充</p><h2 id="填坑">填坑</h2><ul><li>寄器学习，深度学习，神经网络</li><li>pwn未补完知识</li><li>大数据实验（为什么没有网安实验和软安实验，因为实在没有含金量，没活了可能会放上去）、阅读</li><li>how2heap学习</li><li>csapp</li><li>算法与数据结构</li><li>读书笔记</li><li>框架学习</li><li>moectf等wp（新生赛被新生打爆，悲）</li></ul><h2 id="开新坑">开新坑</h2><ul><li>基于LSTM的日志分析（论文太抽象了）</li><li>操作系统内核实验</li><li>学习过程中的做的项目</li><li>大二实验代码重构（屎山重构，悲）</li><li>CVE分析</li><li>各种课的lab</li><li>missing-semester</li><li>区块链</li></ul><h2 id="不能再写的东西">不能再写的东西</h2><ul><li>抽象文（太抽象了容易把别人吓到）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/09/hello-world/"/>
       <url>/2022/09/hello-world/</url>
