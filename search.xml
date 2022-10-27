@@ -4,6 +4,183 @@
   
     
     <entry>
+      <title>missing-semester-2</title>
+      <link href="/2022/10/missing-semester-2/"/>
+      <url>/2022/10/missing-semester-2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> missing-semester </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> missing-semester </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>logistic-regression</title>
+      <link href="/2022/10/logistic-regression/"/>
+      <url>/2022/10/logistic-regression/</url>
+      
+        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ML </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习：线性回归</title>
+      <link href="/2022/10/linear-regression/"/>
+      <url>/2022/10/linear-regression/</url>
+      
+        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ML </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>missing-semester学习（一）</title>
+      <link href="/2022/10/missing-semester-1/"/>
+      <url>/2022/10/missing-semester-1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> missing-semester </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> missing-semester </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ssh分析</title>
+      <link href="/2022/10/ssh-analysis/"/>
+      <url>/2022/10/ssh-analysis/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> network-security </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IPsec分析</title>
+      <link href="/2022/10/IPsec-analysis/"/>
+      <url>/2022/10/IPsec-analysis/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> network-sercurity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network-sercurity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ptmalloc源码分析</title>
+      <link href="/2022/10/ptmalloc-analysis/"/>
+      <url>/2022/10/ptmalloc-analysis/</url>
+      
+        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pwn </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>how2heap学习笔记（一）</title>
       <link href="/2022/10/how2heap1/"/>
       <url>/2022/10/how2heap1/</url>
