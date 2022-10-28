@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>CNN</title>
+      <link href="/2022/10/cnn/"/>
+      <url>/2022/10/cnn/</url>
+      
+        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Neural Network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Neural Network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LSTM</title>
+      <link href="/2022/10/lstm/"/>
+      <url>/2022/10/lstm/</url>
+      
+        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Neural Network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Neural Network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>missing-semester学习（二）</title>
       <link href="/2022/10/missing-semester-2/"/>
       <url>/2022/10/missing-semester-2/</url>
@@ -29,7 +79,7 @@
     
     
     <entry>
-      <title>logistic-regression</title>
+      <title>逻辑回归分析</title>
       <link href="/2022/10/logistic-regression/"/>
       <url>/2022/10/logistic-regression/</url>
       
