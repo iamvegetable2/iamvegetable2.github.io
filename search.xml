@@ -266,8 +266,6 @@
             
             <tag> data analysis </tag>
             
-            <tag> pandas </tag>
-            
         </tags>
       
     </entry>
@@ -292,8 +290,6 @@
         <tags>
             
             <tag> python </tag>
-            
-            <tag> numpy </tag>
             
             <tag> data analysis </tag>
             
@@ -338,16 +334,14 @@
       
       <categories>
           
-          <category> CVE </category>
+          <category> sec </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CVE </tag>
-            
-            <tag> vulnerability </tag>
+            <tag> sec </tag>
             
         </tags>
       
@@ -422,9 +416,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> web </tag>
+            
+            <tag> python </tag>
             
             <tag> flask </tag>
             
@@ -451,11 +445,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
-            <tag> django </tag>
-            
             <tag> web </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -502,14 +494,16 @@
       
       <categories>
           
-          <category> web vuln </category>
+          <category> sec </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> web vuln </tag>
+            <tag> web </tag>
+            
+            <tag> sec </tag>
             
         </tags>
       
@@ -615,14 +609,14 @@
       
       <categories>
           
-          <category> Neural Network </category>
+          <category> AI </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Neural Network </tag>
+            <tag> AI </tag>
             
         </tags>
       
@@ -640,14 +634,14 @@
       
       <categories>
           
-          <category> Neural Network </category>
+          <category> AI </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Neural Network </tag>
+            <tag> AI </tag>
             
         </tags>
       
@@ -690,14 +684,14 @@
       
       <categories>
           
-          <category> ML </category>
+          <category> AI </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> ML </tag>
+            <tag> AI </tag>
             
         </tags>
       
@@ -715,14 +709,14 @@
       
       <categories>
           
-          <category> ML </category>
+          <category> AI </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> ML </tag>
+            <tag> AI </tag>
             
         </tags>
       
@@ -790,14 +784,14 @@
       
       <categories>
           
-          <category> network-sercurity </category>
+          <category> sec </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> network-sercurity </tag>
+            <tag> sec </tag>
             
         </tags>
       
@@ -928,8 +922,6 @@
             
             <tag> re </tag>
             
-            <tag> amd64 </tag>
-            
         </tags>
       
     </entry>
@@ -956,8 +948,6 @@
             <tag> pwn </tag>
             
             <tag> re </tag>
-            
-            <tag> 编译原理 </tag>
             
         </tags>
       
