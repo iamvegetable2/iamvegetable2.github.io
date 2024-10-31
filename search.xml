@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>RDBMS概览</title>
+      <link href="/2024/09/test1/"/>
+      <url>/2024/09/test1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>之前写的水文，搬看个乐子就好了</p><h2 id="一、ACID特性与案例">一、ACID特性与案例</h2><h3 id="1-RDBMS事务ACID特性">1.RDBMS事务ACID特性</h3><p>事务(Transaction) 是由一组SQL语句组成的一个程序执行单元(Unit)， 它需要满足ACID特性。</p><ul><li>原子性(Atomicity)：事务是一个不可再分割的工作单元，事务中的操作要么都发生，要么都不发生。</li><li>一致性(Consistency)：数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</li><li>隔离性(Isolation)：多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</li><li>持久性(Durability)：在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><h3 id="2-案例">2.案例</h3><p>我们可以设想一个例子，A给B转100元，需要执行的操作是A的账户减100元，B的账户加100元，如果我们的转账行为要满足ACID：</p><ul><li>原子性要求：假如A账户已经扣款，我们必须要保证B的账户加上100元，不能在A扣款后，B收不到钱，即A扣款和B加钱要么同时成功要么同时失败。</li><li>一致性要求：加入A账户余额小于100，我们要保证A的转账操作不会发生，即每个操作必须是合法的（A账户转账金额大于余额是不合法的），应该由一个有效状态到另一个有效状态。</li><li>隔离性要求：假如A和C同时给B转账，需要保证B能够同时接收到A和C的钱，即两个操作并发操作时，应该互不影响。</li><li>持久性要求：数据更新成功后，结果应该永久保留（即保存到非易失性介质中），不能因为宕机等情况丢失。<br>当然可能还需要满足其他要求：如高并发（同时有1千万人给B转账，需要快速处理）、高可靠（服务不会随意宕机）</li></ul><p>总的来说，ACID是事务的基本性质，必须要满足ACID特性，才能够保证事务的执行是正确的，不会发生意想不到的错误，也即ACID特性是事务正确性的前提。</p><h2 id="二、发展历史">二、发展历史</h2><p>人工-&gt;文件-&gt;DB</p><h3 id="1-DBMS模型">1.DBMS模型</h3><ul><li>网状模型：用有向图表示实体和实体之间的联系的模型</li><li>层次模型：用树形结构表示实体与实体的层次关系</li><li>关系模型（关系型数据库）：将关系用二维表形式表示</li></ul><h2 id="三、关键技术">三、关键技术</h2><h3 id="1-SQL引擎——Parser">1.SQL引擎——Parser</h3><p>主要包括词法分析、语法分析、语义分析等过程<br>词法分析主要是将SQL语句拆分为关键字、目标表、列名、常数、运算符等部分，语法分析分析出SQL语句各个部分的构成，再通过语义分析是否合法。</p><h3 id="2-Optimizer">2.Optimizer</h3><p>为什么使用Optimizer：可以有效简化计算和执行路径，有效提高SQL语句的执行性能。<br>（1）RBO（基于规则的优化器）<br>条件化简：通过数据流和执行流分析表达式最简单的形式，如<code>a = 5 and b &gt; a</code>可以化简为<code>a = 5 and b &gt; 5</code>。<br>表连接优化：总是小表先连接<br>Scan优化<br>（2）CBO（基于代价的优化器）<br>选择代价最低的执行方案</p><h3 id="3-Executor">3.Executor</h3><p>（1）火山模型：思路是向下访问（每个Operator访问下层Operator），向上求解（每个Operator求解出结果后返回上层）<br>优点：低耦合，逻辑简单<br>缺点：函数调用多，效率低<br>（2）向量化：一次计算一批数据，向上层返回一个向量<br>优点：性能更好（Cache命中率高、可以利用SIMD机制等）<br>（3）编译执行</p><h3 id="4-存储引擎：InnoDB">4.存储引擎：InnoDB</h3><p>存储引擎负责了数据的底层存储、管理和访问工作。5.6之后的的版本MySQL默认存储引擎为Innodb,它具有支持事务,支持外键,支持行级锁以及崩溃恢复等特性,是目前比较优秀的存储引擎。</p><ul><li>Buffer Pool：存储引擎位于内存中的重要结构，用于缓存数据，减少磁盘IO的开销。在实际使用过程中采用了冷热分离机制，减少了热数据频繁切入切出的开销。</li><li>Page：存储基本单位（类似于操作系统中的页机制）</li><li>B+树：索引结构</li></ul><h3 id="5-事务引擎">5.事务引擎</h3><ul><li>UndoLog：保证原子性，当原子操作未完成时，依赖Log进行回滚</li><li>锁：保证隔离性</li><li>MVCC：保证隔离性，读写不阻塞，可以防止死锁</li><li>持久性：一是在事务提交前写入磁盘，二是维护Redo Log，若写入前发生故障，MySQL会根据Log重做事务。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Go性能优化(水)</title>
       <link href="/2024/09/test/"/>
       <url>/2024/09/test/</url>
@@ -29,23 +54,23 @@
     
     
     <entry>
-      <title>RDBMS概览</title>
-      <link href="/2024/09/test1/"/>
-      <url>/2024/09/test1/</url>
+      <title>消息队列概述</title>
+      <link href="/2024/09/test4/"/>
+      <url>/2024/09/test4/</url>
       
-        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>之前写的水文，搬看个乐子就好了</p><h2 id="一、ACID特性与案例">一、ACID特性与案例</h2><h3 id="1-RDBMS事务ACID特性">1.RDBMS事务ACID特性</h3><p>事务(Transaction) 是由一组SQL语句组成的一个程序执行单元(Unit)， 它需要满足ACID特性。</p><ul><li>原子性(Atomicity)：事务是一个不可再分割的工作单元，事务中的操作要么都发生，要么都不发生。</li><li>一致性(Consistency)：数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</li><li>隔离性(Isolation)：多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</li><li>持久性(Durability)：在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><h3 id="2-案例">2.案例</h3><p>我们可以设想一个例子，A给B转100元，需要执行的操作是A的账户减100元，B的账户加100元，如果我们的转账行为要满足ACID：</p><ul><li>原子性要求：假如A账户已经扣款，我们必须要保证B的账户加上100元，不能在A扣款后，B收不到钱，即A扣款和B加钱要么同时成功要么同时失败。</li><li>一致性要求：加入A账户余额小于100，我们要保证A的转账操作不会发生，即每个操作必须是合法的（A账户转账金额大于余额是不合法的），应该由一个有效状态到另一个有效状态。</li><li>隔离性要求：假如A和C同时给B转账，需要保证B能够同时接收到A和C的钱，即两个操作并发操作时，应该互不影响。</li><li>持久性要求：数据更新成功后，结果应该永久保留（即保存到非易失性介质中），不能因为宕机等情况丢失。<br>当然可能还需要满足其他要求：如高并发（同时有1千万人给B转账，需要快速处理）、高可靠（服务不会随意宕机）</li></ul><p>总的来说，ACID是事务的基本性质，必须要满足ACID特性，才能够保证事务的执行是正确的，不会发生意想不到的错误，也即ACID特性是事务正确性的前提。</p><h2 id="二、发展历史">二、发展历史</h2><p>人工-&gt;文件-&gt;DB</p><h3 id="1-DBMS模型">1.DBMS模型</h3><ul><li>网状模型：用有向图表示实体和实体之间的联系的模型</li><li>层次模型：用树形结构表示实体与实体的层次关系</li><li>关系模型（关系型数据库）：将关系用二维表形式表示</li></ul><h2 id="三、关键技术">三、关键技术</h2><h3 id="1-SQL引擎——Parser">1.SQL引擎——Parser</h3><p>主要包括词法分析、语法分析、语义分析等过程<br>词法分析主要是将SQL语句拆分为关键字、目标表、列名、常数、运算符等部分，语法分析分析出SQL语句各个部分的构成，再通过语义分析是否合法。</p><h3 id="2-Optimizer">2.Optimizer</h3><p>为什么使用Optimizer：可以有效简化计算和执行路径，有效提高SQL语句的执行性能。<br>（1）RBO（基于规则的优化器）<br>条件化简：通过数据流和执行流分析表达式最简单的形式，如<code>a = 5 and b &gt; a</code>可以化简为<code>a = 5 and b &gt; 5</code>。<br>表连接优化：总是小表先连接<br>Scan优化<br>（2）CBO（基于代价的优化器）<br>选择代价最低的执行方案</p><h3 id="3-Executor">3.Executor</h3><p>（1）火山模型：思路是向下访问（每个Operator访问下层Operator），向上求解（每个Operator求解出结果后返回上层）<br>优点：低耦合，逻辑简单<br>缺点：函数调用多，效率低<br>（2）向量化：一次计算一批数据，向上层返回一个向量<br>优点：性能更好（Cache命中率高、可以利用SIMD机制等）<br>（3）编译执行</p><h3 id="4-存储引擎：InnoDB">4.存储引擎：InnoDB</h3><p>存储引擎负责了数据的底层存储、管理和访问工作。5.6之后的的版本MySQL默认存储引擎为Innodb,它具有支持事务,支持外键,支持行级锁以及崩溃恢复等特性,是目前比较优秀的存储引擎。</p><ul><li>Buffer Pool：存储引擎位于内存中的重要结构，用于缓存数据，减少磁盘IO的开销。在实际使用过程中采用了冷热分离机制，减少了热数据频繁切入切出的开销。</li><li>Page：存储基本单位（类似于操作系统中的页机制）</li><li>B+树：索引结构</li></ul><h3 id="5-事务引擎">5.事务引擎</h3><ul><li>UndoLog：保证原子性，当原子操作未完成时，依赖Log进行回滚</li><li>锁：保证隔离性</li><li>MVCC：保证隔离性，读写不阻塞，可以防止死锁</li><li>持久性：一是在事务提交前写入磁盘，二是维护Redo Log，若写入前发生故障，MySQL会根据Log重做事务。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="提醒">提醒</h2><p>巨水无比，最水的一集</p><h2 id="一、消息队列应用场景">一、消息队列应用场景</h2><p>最常见的是：解耦、削峰、异步、日志处理</p><ul><li>解耦：各个模块只需要对消息队列进行操作，业务逻辑相对独立。</li><li>削峰：可以控制流量，避免业务挂掉。</li><li>异步：如果下游接口返回的数据不是必要的，则可以将用户请求交给消息队列，消息队列交给下游的模块接口处理，用户不必等待所有接口处理完成返回，也可以缓解串行处理的时延问题。</li><li>日志处理：可以处理大规模日志数据的传输问题（类似于削峰）</li></ul><h2 id="二、Kafka">二、Kafka</h2><h3 id="1-适用场景">1.适用场景</h3><p>直播、订单、搜索服务</p><h3 id="2-使用方法">2.使用方法</h3><p>创建Kafka集群-&gt;创建Topic-&gt;设计生产者逻辑，初始化生产者，发送消息-&gt;设计消费者逻辑，初始化消费者，接收消息</p><h3 id="3-基本概念">3.基本概念</h3><p>Kafka的基础架构为：</p><ul><li>Topic：逻辑队列，一个 Topic 中拥有多个Partition（Kafka的物理分区）。一个Topic看作是一组具有相同主题的消息。</li><li>Cluster：物理集群，每个集群中可以建立多个不同的 Topic。</li><li>Producer：生产者，负责将业务消息发送到 Topic 中。</li><li>Consumer：消费者，负责接收并处理Topic 中的消息。</li><li>ConsumerGroup：消费者组，包含多个消费者，每个消费者的消费进度互不干涉。<br>Kafka中的其他基本概念</li><li>Offset：消息在 Partition 内的相对位置信息，可以理解为唯一 ID，在 Partition 内部严格递增。我们可以利用 Partition 和Offset唯一地定位一个消息</li><li>Replica：Partition 的副本，主要作用是容灾，这些副本有着不同的角色，分别是 Leader 和 Follower。Leader 对外提供数据；Follower 会拉取 Leader 的数据进行同步，但不提供服务，如果 Leader 挂掉了，可以将 Follower 提升成 Leader 再对外进行服务。</li><li>ISR（In-Sync Replica）：当Follower与Leader差距较小时，可以被纳入ISR。ISR中的Follower可以升为Leader。</li><li>ZooKeeper ：存储集群元数据</li></ul><h3 id="4-Kafka运行流程">4.Kafka运行流程</h3><h4 id="4-1-数据流">4.1 数据流</h4><p>主要流程是Producer-&gt;Broker-&gt;Consumer</p><h4 id="4-2-Producer-端">4.2 Producer 端</h4><p>在Producer端的主要优化是批量发送。因为Producer将消息发送给Broker后，需要接收确认消息，批量发送可以有效减少交互次数，减少IO次数，提高交互效率<br>在消息容量太大，带宽较小的场景下，Kafka会对数据进行压缩，减少消息的大小，有效利用带宽资源</p><h4 id="4-3-Broker端">4.3 Broker端</h4><p>Broker写入使用顺序写入，减少磁盘寻道成本<br>Consumer 请求消息时会发送 FetchRequest ，Broker 通过索引取出消息，按照时间窗口和信息大小发送给 Consumer。<br>Broker的有两种文件索引方式，通常使用二分法查找目标的位置<br>kafka 拷贝数据的流程不经过用户态空间，而是在读取磁盘后直接将 Read Buffer 中的数据传输到 NIC Buffer，通过 NIC Buffer 直接交付给消费者进程。这种方式减少了拷贝次数，有效提高了效率。</p><h4 id="4-4-缺点">4.4 缺点</h4><ul><li>运维成本高</li><li>负载不均衡</li><li>需要依赖于Page Cache</li><li>若Controller和Coordinator与Broker在同一个进程中，大量 I/O 会导致性能下降。</li></ul>]]></content>
       
       
       <categories>
           
-          <category> database </category>
+          <category> web </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> database </tag>
+            <tag> web </tag>
             
         </tags>
       
@@ -75,31 +100,6 @@
             <tag> golang </tag>
             
             <tag> database </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>消息队列概述</title>
-      <link href="/2024/09/test4/"/>
-      <url>/2024/09/test4/</url>
-      
-        <content type="html"><![CDATA[<h2 id="提醒">提醒</h2><p>巨水无比，最水的一集</p><h2 id="一、消息队列应用场景">一、消息队列应用场景</h2><p>最常见的是：解耦、削峰、异步、日志处理</p><ul><li>解耦：各个模块只需要对消息队列进行操作，业务逻辑相对独立。</li><li>削峰：可以控制流量，避免业务挂掉。</li><li>异步：如果下游接口返回的数据不是必要的，则可以将用户请求交给消息队列，消息队列交给下游的模块接口处理，用户不必等待所有接口处理完成返回，也可以缓解串行处理的时延问题。</li><li>日志处理：可以处理大规模日志数据的传输问题（类似于削峰）</li></ul><h2 id="二、Kafka">二、Kafka</h2><h3 id="1-适用场景">1.适用场景</h3><p>直播、订单、搜索服务</p><h3 id="2-使用方法">2.使用方法</h3><p>创建Kafka集群-&gt;创建Topic-&gt;设计生产者逻辑，初始化生产者，发送消息-&gt;设计消费者逻辑，初始化消费者，接收消息</p><h3 id="3-基本概念">3.基本概念</h3><p>Kafka的基础架构为：</p><ul><li>Topic：逻辑队列，一个 Topic 中拥有多个Partition（Kafka的物理分区）。一个Topic看作是一组具有相同主题的消息。</li><li>Cluster：物理集群，每个集群中可以建立多个不同的 Topic。</li><li>Producer：生产者，负责将业务消息发送到 Topic 中。</li><li>Consumer：消费者，负责接收并处理Topic 中的消息。</li><li>ConsumerGroup：消费者组，包含多个消费者，每个消费者的消费进度互不干涉。<br>Kafka中的其他基本概念</li><li>Offset：消息在 Partition 内的相对位置信息，可以理解为唯一 ID，在 Partition 内部严格递增。我们可以利用 Partition 和Offset唯一地定位一个消息</li><li>Replica：Partition 的副本，主要作用是容灾，这些副本有着不同的角色，分别是 Leader 和 Follower。Leader 对外提供数据；Follower 会拉取 Leader 的数据进行同步，但不提供服务，如果 Leader 挂掉了，可以将 Follower 提升成 Leader 再对外进行服务。</li><li>ISR（In-Sync Replica）：当Follower与Leader差距较小时，可以被纳入ISR。ISR中的Follower可以升为Leader。</li><li>ZooKeeper ：存储集群元数据</li></ul><h3 id="4-Kafka运行流程">4.Kafka运行流程</h3><h4 id="4-1-数据流">4.1 数据流</h4><p>主要流程是Producer-&gt;Broker-&gt;Consumer</p><h4 id="4-2-Producer-端">4.2 Producer 端</h4><p>在Producer端的主要优化是批量发送。因为Producer将消息发送给Broker后，需要接收确认消息，批量发送可以有效减少交互次数，减少IO次数，提高交互效率<br>在消息容量太大，带宽较小的场景下，Kafka会对数据进行压缩，减少消息的大小，有效利用带宽资源</p><h4 id="4-3-Broker端">4.3 Broker端</h4><p>Broker写入使用顺序写入，减少磁盘寻道成本<br>Consumer 请求消息时会发送 FetchRequest ，Broker 通过索引取出消息，按照时间窗口和信息大小发送给 Consumer。<br>Broker的有两种文件索引方式，通常使用二分法查找目标的位置<br>kafka 拷贝数据的流程不经过用户态空间，而是在读取磁盘后直接将 Read Buffer 中的数据传输到 NIC Buffer，通过 NIC Buffer 直接交付给消费者进程。这种方式减少了拷贝次数，有效提高了效率。</p><h4 id="4-4-缺点">4.4 缺点</h4><ul><li>运维成本高</li><li>负载不均衡</li><li>需要依赖于Page Cache</li><li>若Controller和Coordinator与Broker在同一个进程中，大量 I/O 会导致性能下降。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> web </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
             
         </tags>
       
@@ -246,85 +246,6 @@
     
     
     <entry>
-      <title>pandas使用</title>
-      <link href="/2022/10/pandas/"/>
-      <url>/2022/10/pandas/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> data analysis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>numpy使用</title>
-      <link href="/2022/10/numpy/"/>
-      <url>/2022/10/numpy/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> data analysis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>crypto_1</title>
-      <link href="/2022/10/crypto-1/"/>
-      <url>/2022/10/crypto-1/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> crypto </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> crypto </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>flask_1</title>
       <link href="/2022/10/flask-1/"/>
       <url>/2022/10/flask-1/</url>
@@ -381,33 +302,6 @@
     
     
     <entry>
-      <title>DVWA_1</title>
-      <link href="/2022/10/DVWA-1/"/>
-      <url>/2022/10/DVWA-1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> sec </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-            <tag> sec </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MIT6.824_1</title>
       <link href="/2022/10/MIT6-824-1/"/>
       <url>/2022/10/MIT6-824-1/</url>
@@ -438,81 +332,6 @@
         <tags>
             
             <tag> OS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>golang学习（一）</title>
-      <link href="/2022/10/golang1/"/>
-      <url>/2022/10/golang1/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> golang </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> golang </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CNN</title>
-      <link href="/2022/10/cnn/"/>
-      <url>/2022/10/cnn/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> AI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>LSTM</title>
-      <link href="/2022/10/lstm/"/>
-      <url>/2022/10/lstm/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> AI </tag>
             
         </tags>
       
@@ -571,83 +390,6 @@
     
     
     <entry>
-      <title>ssh分析</title>
-      <link href="/2022/10/ssh-analysis/"/>
-      <url>/2022/10/ssh-analysis/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> network-security </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IPsec分析</title>
-      <link href="/2022/10/IPsec-analysis/"/>
-      <url>/2022/10/IPsec-analysis/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> sec </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> sec </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ptmalloc源码分析</title>
-      <link href="/2022/10/ptmalloc-analysis/"/>
-      <url>/2022/10/ptmalloc-analysis/</url>
-      
-        <content type="html"><![CDATA[<p>zsbd</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> pwn </tag>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>how2heap学习笔记（一）</title>
       <link href="/2022/10/how2heap1/"/>
       <url>/2022/10/how2heap1/</url>
@@ -665,31 +407,6 @@
         <tags>
             
             <tag> pwn </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>TODO_list</title>
-      <link href="/2022/10/TODO-list/"/>
-      <url>/2022/10/TODO-list/</url>
-      
-        <content type="html"><![CDATA[<p>访问速度不知道咋样，可能考虑挂个CDN<br>大概会再补充</p><h2 id="填坑">填坑</h2><ul><li>寄器学习，深度学习，神经网络</li><li>pwn未补完知识</li><li>大数据实验（为什么没有网安实验和软安实验，因为实在没有含金量，没活了可能会放上去）、阅读</li><li>how2heap学习</li><li>csapp</li><li>算法与数据结构</li><li>读书笔记</li><li>框架学习</li><li>moectf等wp（新生赛被新生打爆，悲）</li></ul><h2 id="开新坑">开新坑</h2><ul><li>基于LSTM的日志分析（论文太抽象了）</li><li>操作系统内核实验</li><li>学习过程中的做的项目</li><li>大二实验代码重构（屎山重构，悲）</li><li>CVE分析</li><li>各种课的lab</li><li>missing-semester</li><li>区块链</li></ul><h2 id="不能再写的东西">不能再写的东西</h2><ul><li>抽象文（太抽象了容易把别人吓到）</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
             
         </tags>
       
@@ -960,7 +677,7 @@
       <link href="/2022/07/b/"/>
       <url>/2022/07/b/</url>
       
-        <content type="html"><![CDATA[<h2 id="编辑工具">编辑工具</h2><h3 id="Typora">Typora</h3><p>好用，目前收费，但可以白嫖（乐），具体下载地址请自行百度。还是推荐大家支持正版（叠甲）。</p><h3 id="Visual-Studio-Code">Visual Studio Code</h3><p><s>目前在用</s>，需要下载插件：</p><ul><li>Markdown All in One</li><li>Markdown Preview Enhanced</li></ul><h3 id="Obsdian">Obsdian</h3><p>用起来比较舒服。也是常用工具</p><blockquote><p>不止于Markdown，后续应该会开个坑说说这个工具（应该，咕咕咕）</p></blockquote><h3 id="Notion">Notion</h3><p>原生支持Markdown，界面很简洁。且拥有很多强大的模板和功能<br>缺点：</p><ul><li>因为是上云的，且服务器在国外，所以打开比较慢（虽然我觉得速度还是可以接受）</li><li>数据可能会丢失 <s>(备份一下就好了)</s> （切记一定要备份）</li></ul><blockquote><p>TODO-List: 因为最近组里要求使用这个工具，后续可能会学习一下这个工具的使用（咕咕咕）</p></blockquote><h2 id="基本语法">基本语法</h2><p>基本语法使用几次就会了，虽然有学习成本，但总体来说比较容易。</p><h3 id="标题">标题</h3><p>使用<code>#</code>表示1-6级标题<br>不要忘了加空格，后同。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure><h3 id="区块">区块</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一个区块</span></span><br></pre></td></tr></table></figure><p>效果</p><blockquote><p>这是一个区块</p></blockquote><p>也可以嵌套</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 第一层</span></span><br><span class="line"><span class="quote">&gt; &gt; 第二层</span></span><br></pre></td></tr></table></figure><p>效果</p><blockquote><p>第一层</p><blockquote><p>第二层</p></blockquote></blockquote><h3 id="列表">列表</h3><p>可以使用序号或<code>-</code>表示列表</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 1</span><br><span class="line"><span class="bullet">2.</span> 2</span><br><span class="line"><span class="bullet">3.</span> 3</span><br></pre></td></tr></table></figure><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 1</span><br><span class="line"><span class="bullet">-</span> 2</span><br><span class="line"><span class="bullet">-</span> 3</span><br></pre></td></tr></table></figure><p>效果</p><ol><li>1</li><li>2</li><li>3</li></ol><ul><li>1</li><li>2</li><li>3</li></ul><h3 id="代码块">代码块</h3><p>代码区块可以使用<code>```</code>将其包裹起来</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="code">```c</span></span><br><span class="line"><span class="code">#include&lt;stdio.h&gt;</span></span><br><span class="line"><span class="code">int main()&#123;</span></span><br><span class="line"><span class="code">    printf(&quot;Hello World\n&quot;);</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line"><span class="code">&#125;```</span></span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>行内代码块可以使用`包裹<br>如</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`printf`</span></span><br></pre></td></tr></table></figure><p>效果<br><code>printf</code></p><h3 id="数学公式">数学公式</h3><p>行内使用<code>$</code>，公式块使用<code>$$</code>，Markdown一般使用KaTex或MathJax进行渲染，具体的语法请自行查阅。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\frac&#123;\partial f&#125;&#123;\partial x&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure><p>效果</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p><h3 id="表格">表格</h3><p>使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分割表头与表项。</p><p>冒号在左边表示左对齐，右边为右对齐，两边都有为中间对齐。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|a|b|c</span><br><span class="line">|:---|---:|:---:|</span><br><span class="line">|ABC|1|2|</span><br><span class="line">|abc|0|1|</span><br></pre></td></tr></table></figure><p>效果</p><table><thead><tr><th style="text-align:left">a</th><th style="text-align:right">b</th><th style="text-align:center">c</th></tr></thead><tbody><tr><td style="text-align:left">ABC</td><td style="text-align:right">1</td><td style="text-align:center">2</td></tr><tr><td style="text-align:left">abc</td><td style="text-align:right">0</td><td style="text-align:center">1</td></tr></tbody></table><h3 id="分割线">分割线</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><p>效果</p><hr><h3 id="链接">链接</h3><p>使用方式</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接名称</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure><p>效果<br><a href="www.baidu.com">百度</a></p><h3 id="一些其他用法">一些其他用法</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本*</span></span><br><span class="line"><span class="strong">**粗体文本**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体文本*</span>**</span></span><br><span class="line">~~删除线~~</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>带下划线文本<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br><span class="line">2<span class="language-xml"><span class="tag">&lt;<span class="name">sup</span>&gt;</span></span>10<span class="language-xml"><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span></span><br><span class="line">H<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span>O</span><br></pre></td></tr></table></figure><p>其中上下标和下划线使用的是嵌入的html语句。<br>效果<br><em>斜体文本</em><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><s>删除线</s><br><u>带下划线文本</u></p><p>2<sup>10</sup><br>H<sub>2</sub>O</p><h3 id="嵌入html-css或javascript">嵌入html,css或javascript</h3><p>Markdown支持嵌入html,css或javascript。</p><h3 id="转义">转义</h3><p>Markdown使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown使用反斜杠转义特殊字符。<br>Markdown支持以下这些符号前面加上反斜杠以表示插入普通的符号：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\   反斜线</span><br><span class="line">`   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   下划线</span><br><span class="line">&#123;&#125;  花括号</span><br><span class="line">[]  方括号</span><br><span class="line">()  小括号</span><br><span class="line">#   井字号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   感叹号</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="编辑工具">编辑工具</h2><h3 id="Typora">Typora</h3><p>好用，目前收费，但可以白嫖（乐），具体下载地址请自行百度。还是推荐大家支持正版（叠甲）。</p><h3 id="Visual-Studio-Code">Visual Studio Code</h3><p><s>目前在用</s>，需要下载插件：</p><ul><li>Markdown All in One</li><li>Markdown Preview Enhanced</li></ul><h3 id="Obsdian">Obsdian</h3><p>用起来比较舒服。事常用工具</p><blockquote><p>不止于Markdown，后续应该会开个坑说说这个工具（应该，咕咕咕）</p></blockquote><h3 id="Notion">Notion</h3><p>原生支持Markdown，界面很简洁。且拥有很多强大的模板和功能<br>缺点：</p><ul><li>因为是上云的，且服务器在国外，所以打开比较慢（虽然我觉得速度还是可以接受）</li><li>数据可能会丢失 <s>(备份一下就好了)</s> （切记一定要备份）</li></ul><blockquote><p>TODO-List: 因为最近组里要求使用这个工具，后续可能会学习一下这个工具的使用（咕咕咕）</p></blockquote><h2 id="基本语法">基本语法</h2><p>基本语法使用几次就会了，学习成本不高。</p><h3 id="标题">标题</h3><p>使用<code>#</code>表示1-6级标题<br>不要忘了加空格，后同。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure><h3 id="区块">区块</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一个区块</span></span><br></pre></td></tr></table></figure><p>效果</p><blockquote><p>这是一个区块</p></blockquote><p>也可以嵌套</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 第一层</span></span><br><span class="line"><span class="quote">&gt; &gt; 第二层</span></span><br></pre></td></tr></table></figure><p>效果</p><blockquote><p>第一层</p><blockquote><p>第二层</p></blockquote></blockquote><h3 id="列表">列表</h3><p>可以使用序号或<code>-</code>表示列表</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 1</span><br><span class="line"><span class="bullet">2.</span> 2</span><br><span class="line"><span class="bullet">3.</span> 3</span><br></pre></td></tr></table></figure><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 1</span><br><span class="line"><span class="bullet">-</span> 2</span><br><span class="line"><span class="bullet">-</span> 3</span><br></pre></td></tr></table></figure><p>效果</p><ol><li>1</li><li>2</li><li>3</li></ol><ul><li>1</li><li>2</li><li>3</li></ul><h3 id="代码块">代码块</h3><p>代码区块可以使用<code>```</code>将其包裹起来</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="code">```c</span></span><br><span class="line"><span class="code">#include&lt;stdio.h&gt;</span></span><br><span class="line"><span class="code">int main()&#123;</span></span><br><span class="line"><span class="code">    printf(&quot;Hello World\n&quot;);</span></span><br><span class="line"><span class="code">    return 0;</span></span><br><span class="line"><span class="code">&#125;```</span></span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>行内代码块可以使用`包裹<br>如</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`printf`</span></span><br></pre></td></tr></table></figure><p>效果<br><code>printf</code></p><h3 id="数学公式">数学公式</h3><p>行内使用<code>$</code>，公式块使用<code>$$</code>，Markdown一般使用KaTex或MathJax进行渲染，具体的语法请自行查阅。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\frac&#123;\partial f&#125;&#123;\partial x&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure><p>效果</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p><h3 id="表格">表格</h3><p>使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分割表头与表项。</p><p>冒号在左边表示左对齐，右边为右对齐，两边都有为中间对齐。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|a|b|c</span><br><span class="line">|:---|---:|:---:|</span><br><span class="line">|ABC|1|2|</span><br><span class="line">|abc|0|1|</span><br></pre></td></tr></table></figure><p>效果</p><table><thead><tr><th style="text-align:left">a</th><th style="text-align:right">b</th><th style="text-align:center">c</th></tr></thead><tbody><tr><td style="text-align:left">ABC</td><td style="text-align:right">1</td><td style="text-align:center">2</td></tr><tr><td style="text-align:left">abc</td><td style="text-align:right">0</td><td style="text-align:center">1</td></tr></tbody></table><h3 id="分割线">分割线</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><p>效果</p><hr><h3 id="链接">链接</h3><p>使用方式</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接名称</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure><p>效果<br><a href="www.baidu.com">百度</a></p><h3 id="一些其他用法">一些其他用法</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本*</span></span><br><span class="line"><span class="strong">**粗体文本**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体文本*</span>**</span></span><br><span class="line">~~删除线~~</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>带下划线文本<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br><span class="line">2<span class="language-xml"><span class="tag">&lt;<span class="name">sup</span>&gt;</span></span>10<span class="language-xml"><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span></span><br><span class="line">H<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span>O</span><br></pre></td></tr></table></figure><p>其中上下标和下划线使用的是嵌入的html语句。<br>效果<br><em>斜体文本</em><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><s>删除线</s><br><u>带下划线文本</u></p><p>2<sup>10</sup><br>H<sub>2</sub>O</p><h3 id="嵌入html-css或javascript">嵌入html,css或javascript</h3><p>Markdown支持嵌入html,css或javascript。</p><h3 id="转义">转义</h3><p>Markdown使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown使用反斜杠转义特殊字符。<br>Markdown支持以下这些符号前面加上反斜杠以表示插入普通的符号：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\   反斜线</span><br><span class="line">`   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   下划线</span><br><span class="line">&#123;&#125;  花括号</span><br><span class="line">[]  方括号</span><br><span class="line">()  小括号</span><br><span class="line">#   井字号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   感叹号</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -987,7 +704,7 @@
       <link href="/2022/07/hello-world/"/>
       <url>/2022/07/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><hr><p>更新于2023.11.24 <s>（虽然上面有更新时间）</s>(不准，还是看这个吧)</p><h2 id="环境安装">环境安装</h2><p>正好装了台新电脑，环境还是要配的。</p><h3 id="Windows">Windows</h3><p>懒了。<br>确切来说前几天帮人做了个nodejs做的electron项目，结果环境怎么都配不好（悲），遂放弃在Windows上继续折腾nodejs的想法。</p><h3 id="MacOS">MacOS</h3><p>没有，如果有好心人v我一个就试试</p><h3 id="Linux（Ubuntu）">Linux（Ubuntu）</h3><p>因为现代Linux发行版强大的包管理器（如apt,pacman），所以在Linux上配置环境相对来说是一件比较舒服的事情。Linux虚拟机折腾崩了还可以直接回滚。<br>主要是折腾了一下Ubuntu（其他发行版懒得试了，除非我以后有想法换主力操作系统。btw，如果我想换主力操作系统，为什么不用Mac？）</p><h3 id="1-安装nodejs">1.安装nodejs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure><p>这是比较简单的安装方法，也可以参考网上的方法安装较新版本的。不过我一般是能偷懒就偷懒，所以这儿照例就偷个小懒了。</p><h3 id="2-安装hexo">2.安装hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cil</span><br></pre></td></tr></table></figure><p>这之后使用官方给出的命令进行测试</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>看到这个就成了<br><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20180738.png" alt="效果"></p><h3 id="3-配置主题">3.配置主题</h3><p>懒了，根据官方文档和自己喜好配置即可。</p><h3 id="4-使用">4.使用</h3><p>怎么用？<br>Vscode ssh的功能是很完善的，下载插件直接用就好了。<br><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20175122.png" alt="插件商店"><br>Ubuntu下下载并启动ssh</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br><span class="line">service ssh start</span><br></pre></td></tr></table></figure><p>之后连接过程与ssh连接一致。</p><h3 id="5-部署到github">5.部署到github</h3><p>效果：这个页面就是效果</p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><hr><p>更新于2023.11.24 <s>（虽然上面有更新时间）</s>(不准，还是看这个吧)</p><h2 id="环境安装">环境安装</h2><p>正好装了台新电脑，环境还是要配的。</p><h3 id="Windows">Windows</h3><p>懒了。<br>确切来说前几天帮人做了个nodejs做的electron项目，结果环境怎么都配不好（悲），遂放弃在Windows上继续折腾nodejs的想法。</p><h3 id="MacOS">MacOS</h3><p>没有，如果有好心人v我一个就试试</p><h3 id="Linux（Ubuntu）">Linux（Ubuntu）</h3><p>因为Linux发行版强大的包管理器（如apt,pacman），所以在Linux上配置环境相对来说是一件比较舒服的事情。Linux虚拟机折腾崩了还可以直接回滚。<br>因此主要在Ubuntu上折腾了一下（其他发行版懒得试了，除非我以后有想法换主力操作系统。btw，如果我想换主力操作系统，为什么不用Mac？）</p><h3 id="1-安装nodejs">1.安装nodejs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure><p>这是比较简单的安装方法，也可以参考网上的方法安装较新版本的。不过我一般是能偷懒就偷懒，这儿照例偷个小懒。</p><h3 id="2-安装hexo">2.安装hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cil</span><br></pre></td></tr></table></figure><p>这之后使用官方给出的命令进行测试</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>看到这个就成了<br><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20180738.png" alt="效果"></p><h3 id="3-配置主题">3.配置主题</h3><p>懒了(雾），根据官方文档和自己喜好配置即可。</p><h3 id="4-部署到github">4.部署到github</h3><p>修改<code>_config.yml</code>文件(整个项目下的，不是themes下的)，主要修改<code>repository</code>和<code>branch</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/username/repo_name</span><br><span class="line">  branch: main </span><br></pre></td></tr></table></figure><p>使用<code>hexo d</code><br>效果：这个页面就是效果</p>]]></content>
       
       
       <categories>
