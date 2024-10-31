@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>补坑计划</title>
+      <link href="/2024/11/bkjh/"/>
+      <url>/2024/11/bkjh/</url>
+      
+        <content type="html"><![CDATA[<p>开坑or补坑计划表</p><h2 id="2024-11">2024.11</h2><h3 id="算法">算法</h3><p>每天带着看看灵神的东西</p><ul><li>lc 题单 <a href="https://leetcode.cn/circle/discuss/48kq9d/">https://leetcode.cn/circle/discuss/48kq9d/</a></li><li>灵神刷题 <a href="https://leetcode.cn/circle/discuss/RvFUtj/">https://leetcode.cn/circle/discuss/RvFUtj/</a></li><li>灵神DP <a href="https://leetcode.cn/circle/discuss/tXLS3i/">https://leetcode.cn/circle/discuss/tXLS3i/</a></li><li>灵神算法 <a href="https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc">https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc</a></li></ul><h3 id="编译原理">编译原理</h3><p>看pku的软件分析的前置，当然可能过一遍龙书就去看软件分析了</p><ul><li>龙书</li><li>NJU编译原理</li><li>PKU编译原理</li><li><a href="https://www.craftinginterpreters.com/">https://www.craftinginterpreters.com/</a></li></ul><h3 id="软件分析">软件分析</h3><p>师兄要求的</p><ul><li>pku 程序分析</li><li>nju 程序分析</li><li>spa <a href="https://cs.au.dk/~amoeller/spa/">https://cs.au.dk/~amoeller/spa/</a></li><li>太阿源码</li></ul><h3 id="csapp与mit6-s081补完计划">csapp与mit6.s081补完计划</h3><p>rt</p><h3 id="wp补完计划">wp补完计划</h3><p>rt，主要是ts、yl、das（最近就打了这三个）</p><h3 id="懂得都懂板块">懂得都懂板块</h3><p>mysql、redis、go开发相关、ddia、spring的项目。这个可以慢慢补</p><h3 id="missing-semester补完计划">missing-semester补完计划</h3><p>rt，<s>不着急</s>，git可以优先看看。pro git</p><h3 id="nju-pa和os">nju pa和os</h3><p>看情况，不急着开（补）坑，pa之前做了一部分，可以先找找。</p><h3 id="misc">misc</h3><ul><li>数学，不会有人研究生了还在补数理基础吧</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ylctf wp-crypto</title>
       <link href="/2024/11/yl-crypto/"/>
       <url>/2024/11/yl-crypto/</url>
