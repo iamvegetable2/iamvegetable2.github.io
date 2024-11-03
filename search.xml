@@ -8,7 +8,7 @@
       <link href="/2024/11/bkjh/"/>
       <url>/2024/11/bkjh/</url>
       
-        <content type="html"><![CDATA[<p>开坑or补坑计划表</p><h2 id="2024-11">2024.11</h2><h3 id="算法">算法</h3><p>每天带着看看灵神的东西</p><ul><li>lc 题单 <a href="https://leetcode.cn/circle/discuss/48kq9d/">https://leetcode.cn/circle/discuss/48kq9d/</a></li><li>灵神刷题 <a href="https://leetcode.cn/circle/discuss/RvFUtj/">https://leetcode.cn/circle/discuss/RvFUtj/</a></li><li>灵神DP <a href="https://leetcode.cn/circle/discuss/tXLS3i/">https://leetcode.cn/circle/discuss/tXLS3i/</a></li><li>灵神算法 <a href="https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc">https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc</a></li></ul><h3 id="编译原理">编译原理</h3><p>看pku的软件分析的前置，当然可能过一遍龙书就去看软件分析了</p><ul><li>龙书</li><li>NJU编译原理</li><li>PKU编译原理</li><li><a href="https://www.craftinginterpreters.com/">https://www.craftinginterpreters.com/</a></li></ul><h3 id="软件分析">软件分析</h3><p>师兄要求的</p><ul><li>pku 程序分析</li><li>nju 程序分析</li><li>spa <a href="https://cs.au.dk/~amoeller/spa/">https://cs.au.dk/~amoeller/spa/</a></li><li>太阿源码</li></ul><h3 id="csapp与mit6-s081补完计划">csapp与mit6.s081补完计划</h3><p>rt</p><h3 id="wp补完计划">wp补完计划</h3><p>rt，主要是ts、yl、das（最近就打了这三个）</p><h3 id="懂得都懂板块">懂得都懂板块</h3><p>mysql、redis、go开发相关、ddia、spring的项目。这个可以慢慢补</p><h3 id="missing-semester补完计划">missing-semester补完计划</h3><p>rt，<s>不着急</s>，git可以优先看看。pro git</p><h3 id="nju-pa和os">nju pa和os</h3><p>看情况，不急着开（补）坑，pa之前做了一部分，可以先找找。</p><h3 id="misc">misc</h3><ul><li>数学，不会有人研究生了还在补数理基础吧</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>开坑or补坑计划表</p><h2 id="2024-11">2024.11</h2><h3 id="算法">算法</h3><p>每天带着看看灵神的东西</p><ul><li>lc 题单 <a href="https://leetcode.cn/circle/discuss/48kq9d/">https://leetcode.cn/circle/discuss/48kq9d/</a></li><li>灵神刷题 <a href="https://leetcode.cn/circle/discuss/RvFUtj/">https://leetcode.cn/circle/discuss/RvFUtj/</a></li><li>灵神DP <a href="https://leetcode.cn/circle/discuss/tXLS3i/">https://leetcode.cn/circle/discuss/tXLS3i/</a></li><li>灵神算法 <a href="https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc">https://www.bilibili.com/video/BV1Xj411K7oF/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc</a></li></ul><h3 id="编译原理">编译原理</h3><p>看pku的软件分析的前置，当然可能过一遍龙书就去看软件分析了</p><ul><li>龙书，理解其中的抽象（动词，不是形容词）思想</li><li>NJU编译原理</li><li>PKU编译原理</li><li><a href="https://www.craftinginterpreters.com/">https://www.craftinginterpreters.com/</a></li></ul><h3 id="软件分析">软件分析</h3><p>师兄要求的</p><ul><li>pku 程序分析</li><li>nju 程序分析</li><li>spa <a href="https://cs.au.dk/~amoeller/spa/">https://cs.au.dk/~amoeller/spa/</a></li><li>太阿源码</li><li>《Software Foundations》，在线书籍，网址：<a href="https://softwarefoundations.cis.upenn.edu/%EF%BC%8C%E7%94%B1%E5%BF%97%E6%84%BF%E8%80%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91%E7%89%88%EF%BC%9Ahttps://coq-zh.github.io/SF-zh/">https://softwarefoundations.cis.upenn.edu/，由志愿者维护的中文翻译版：https://coq-zh.github.io/SF-zh/</a></li></ul><h3 id="csapp与mit6-s081补完计划">csapp与mit6.s081补完计划</h3><p>rt</p><h3 id="wp补完计划">wp补完计划</h3><p>rt，主要是ts、yl、das（最近就打了这三个）</p><h3 id="懂得都懂板块">懂得都懂板块</h3><p>mysql、redis、go开发相关、ddia、spring的项目。这个可以慢慢补</p><h3 id="missing-semester补完计划">missing-semester补完计划</h3><p>rt，<s>不着急</s>，git可以优先看看。pro git</p><h3 id="nju-pa和os">nju pa和os</h3><p>看情况，不急着开（补）坑，pa之前做了一部分，可以先找找。</p><h3 id="misc">misc</h3><ul><li>数学，不会有人研究生了还在补数理基础吧</li></ul>]]></content>
       
       
       
@@ -28,31 +28,6 @@
         <tags>
             
             <tag> crypto </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>RDBMS概览</title>
-      <link href="/2024/09/test1/"/>
-      <url>/2024/09/test1/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>之前写的水文，搬看个乐子就好了</p><h2 id="一、ACID特性与案例">一、ACID特性与案例</h2><h3 id="1-RDBMS事务ACID特性">1.RDBMS事务ACID特性</h3><p>事务(Transaction) 是由一组SQL语句组成的一个程序执行单元(Unit)， 它需要满足ACID特性。</p><ul><li>原子性(Atomicity)：事务是一个不可再分割的工作单元，事务中的操作要么都发生，要么都不发生。</li><li>一致性(Consistency)：数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</li><li>隔离性(Isolation)：多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</li><li>持久性(Durability)：在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><h3 id="2-案例">2.案例</h3><p>我们可以设想一个例子，A给B转100元，需要执行的操作是A的账户减100元，B的账户加100元，如果我们的转账行为要满足ACID：</p><ul><li>原子性要求：假如A账户已经扣款，我们必须要保证B的账户加上100元，不能在A扣款后，B收不到钱，即A扣款和B加钱要么同时成功要么同时失败。</li><li>一致性要求：加入A账户余额小于100，我们要保证A的转账操作不会发生，即每个操作必须是合法的（A账户转账金额大于余额是不合法的），应该由一个有效状态到另一个有效状态。</li><li>隔离性要求：假如A和C同时给B转账，需要保证B能够同时接收到A和C的钱，即两个操作并发操作时，应该互不影响。</li><li>持久性要求：数据更新成功后，结果应该永久保留（即保存到非易失性介质中），不能因为宕机等情况丢失。<br>当然可能还需要满足其他要求：如高并发（同时有1千万人给B转账，需要快速处理）、高可靠（服务不会随意宕机）</li></ul><p>总的来说，ACID是事务的基本性质，必须要满足ACID特性，才能够保证事务的执行是正确的，不会发生意想不到的错误，也即ACID特性是事务正确性的前提。</p><h2 id="二、发展历史">二、发展历史</h2><p>人工-&gt;文件-&gt;DB</p><h3 id="1-DBMS模型">1.DBMS模型</h3><ul><li>网状模型：用有向图表示实体和实体之间的联系的模型</li><li>层次模型：用树形结构表示实体与实体的层次关系</li><li>关系模型（关系型数据库）：将关系用二维表形式表示</li></ul><h2 id="三、关键技术">三、关键技术</h2><h3 id="1-SQL引擎——Parser">1.SQL引擎——Parser</h3><p>主要包括词法分析、语法分析、语义分析等过程<br>词法分析主要是将SQL语句拆分为关键字、目标表、列名、常数、运算符等部分，语法分析分析出SQL语句各个部分的构成，再通过语义分析是否合法。</p><h3 id="2-Optimizer">2.Optimizer</h3><p>为什么使用Optimizer：可以有效简化计算和执行路径，有效提高SQL语句的执行性能。<br>（1）RBO（基于规则的优化器）<br>条件化简：通过数据流和执行流分析表达式最简单的形式，如<code>a = 5 and b &gt; a</code>可以化简为<code>a = 5 and b &gt; 5</code>。<br>表连接优化：总是小表先连接<br>Scan优化<br>（2）CBO（基于代价的优化器）<br>选择代价最低的执行方案</p><h3 id="3-Executor">3.Executor</h3><p>（1）火山模型：思路是向下访问（每个Operator访问下层Operator），向上求解（每个Operator求解出结果后返回上层）<br>优点：低耦合，逻辑简单<br>缺点：函数调用多，效率低<br>（2）向量化：一次计算一批数据，向上层返回一个向量<br>优点：性能更好（Cache命中率高、可以利用SIMD机制等）<br>（3）编译执行</p><h3 id="4-存储引擎：InnoDB">4.存储引擎：InnoDB</h3><p>存储引擎负责了数据的底层存储、管理和访问工作。5.6之后的的版本MySQL默认存储引擎为Innodb,它具有支持事务,支持外键,支持行级锁以及崩溃恢复等特性,是目前比较优秀的存储引擎。</p><ul><li>Buffer Pool：存储引擎位于内存中的重要结构，用于缓存数据，减少磁盘IO的开销。在实际使用过程中采用了冷热分离机制，减少了热数据频繁切入切出的开销。</li><li>Page：存储基本单位（类似于操作系统中的页机制）</li><li>B+树：索引结构</li></ul><h3 id="5-事务引擎">5.事务引擎</h3><ul><li>UndoLog：保证原子性，当原子操作未完成时，依赖Log进行回滚</li><li>锁：保证隔离性</li><li>MVCC：保证隔离性，读写不阻塞，可以防止死锁</li><li>持久性：一是在事务提交前写入磁盘，二是维护Redo Log，若写入前发生故障，MySQL会根据Log重做事务。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> database </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> database </tag>
             
         </tags>
       
@@ -86,23 +61,23 @@
     
     
     <entry>
-      <title>消息队列概述</title>
-      <link href="/2024/09/test4/"/>
-      <url>/2024/09/test4/</url>
+      <title>RDBMS概览</title>
+      <link href="/2024/09/test1/"/>
+      <url>/2024/09/test1/</url>
       
-        <content type="html"><![CDATA[<h2 id="提醒">提醒</h2><p>巨水无比，最水的一集</p><h2 id="一、消息队列应用场景">一、消息队列应用场景</h2><p>最常见的是：解耦、削峰、异步、日志处理</p><ul><li>解耦：各个模块只需要对消息队列进行操作，业务逻辑相对独立。</li><li>削峰：可以控制流量，避免业务挂掉。</li><li>异步：如果下游接口返回的数据不是必要的，则可以将用户请求交给消息队列，消息队列交给下游的模块接口处理，用户不必等待所有接口处理完成返回，也可以缓解串行处理的时延问题。</li><li>日志处理：可以处理大规模日志数据的传输问题（类似于削峰）</li></ul><h2 id="二、Kafka">二、Kafka</h2><h3 id="1-适用场景">1.适用场景</h3><p>直播、订单、搜索服务</p><h3 id="2-使用方法">2.使用方法</h3><p>创建Kafka集群-&gt;创建Topic-&gt;设计生产者逻辑，初始化生产者，发送消息-&gt;设计消费者逻辑，初始化消费者，接收消息</p><h3 id="3-基本概念">3.基本概念</h3><p>Kafka的基础架构为：</p><ul><li>Topic：逻辑队列，一个 Topic 中拥有多个Partition（Kafka的物理分区）。一个Topic看作是一组具有相同主题的消息。</li><li>Cluster：物理集群，每个集群中可以建立多个不同的 Topic。</li><li>Producer：生产者，负责将业务消息发送到 Topic 中。</li><li>Consumer：消费者，负责接收并处理Topic 中的消息。</li><li>ConsumerGroup：消费者组，包含多个消费者，每个消费者的消费进度互不干涉。<br>Kafka中的其他基本概念</li><li>Offset：消息在 Partition 内的相对位置信息，可以理解为唯一 ID，在 Partition 内部严格递增。我们可以利用 Partition 和Offset唯一地定位一个消息</li><li>Replica：Partition 的副本，主要作用是容灾，这些副本有着不同的角色，分别是 Leader 和 Follower。Leader 对外提供数据；Follower 会拉取 Leader 的数据进行同步，但不提供服务，如果 Leader 挂掉了，可以将 Follower 提升成 Leader 再对外进行服务。</li><li>ISR（In-Sync Replica）：当Follower与Leader差距较小时，可以被纳入ISR。ISR中的Follower可以升为Leader。</li><li>ZooKeeper ：存储集群元数据</li></ul><h3 id="4-Kafka运行流程">4.Kafka运行流程</h3><h4 id="4-1-数据流">4.1 数据流</h4><p>主要流程是Producer-&gt;Broker-&gt;Consumer</p><h4 id="4-2-Producer-端">4.2 Producer 端</h4><p>在Producer端的主要优化是批量发送。因为Producer将消息发送给Broker后，需要接收确认消息，批量发送可以有效减少交互次数，减少IO次数，提高交互效率<br>在消息容量太大，带宽较小的场景下，Kafka会对数据进行压缩，减少消息的大小，有效利用带宽资源</p><h4 id="4-3-Broker端">4.3 Broker端</h4><p>Broker写入使用顺序写入，减少磁盘寻道成本<br>Consumer 请求消息时会发送 FetchRequest ，Broker 通过索引取出消息，按照时间窗口和信息大小发送给 Consumer。<br>Broker的有两种文件索引方式，通常使用二分法查找目标的位置<br>kafka 拷贝数据的流程不经过用户态空间，而是在读取磁盘后直接将 Read Buffer 中的数据传输到 NIC Buffer，通过 NIC Buffer 直接交付给消费者进程。这种方式减少了拷贝次数，有效提高了效率。</p><h4 id="4-4-缺点">4.4 缺点</h4><ul><li>运维成本高</li><li>负载不均衡</li><li>需要依赖于Page Cache</li><li>若Controller和Coordinator与Broker在同一个进程中，大量 I/O 会导致性能下降。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>之前写的水文，搬看个乐子就好了</p><h2 id="一、ACID特性与案例">一、ACID特性与案例</h2><h3 id="1-RDBMS事务ACID特性">1.RDBMS事务ACID特性</h3><p>事务(Transaction) 是由一组SQL语句组成的一个程序执行单元(Unit)， 它需要满足ACID特性。</p><ul><li>原子性(Atomicity)：事务是一个不可再分割的工作单元，事务中的操作要么都发生，要么都不发生。</li><li>一致性(Consistency)：数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</li><li>隔离性(Isolation)：多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</li><li>持久性(Durability)：在事务完成以后，该事务所对数据库所做的更改便持久的保存在数据库之中，并不会被回滚。</li></ul><h3 id="2-案例">2.案例</h3><p>我们可以设想一个例子，A给B转100元，需要执行的操作是A的账户减100元，B的账户加100元，如果我们的转账行为要满足ACID：</p><ul><li>原子性要求：假如A账户已经扣款，我们必须要保证B的账户加上100元，不能在A扣款后，B收不到钱，即A扣款和B加钱要么同时成功要么同时失败。</li><li>一致性要求：加入A账户余额小于100，我们要保证A的转账操作不会发生，即每个操作必须是合法的（A账户转账金额大于余额是不合法的），应该由一个有效状态到另一个有效状态。</li><li>隔离性要求：假如A和C同时给B转账，需要保证B能够同时接收到A和C的钱，即两个操作并发操作时，应该互不影响。</li><li>持久性要求：数据更新成功后，结果应该永久保留（即保存到非易失性介质中），不能因为宕机等情况丢失。<br>当然可能还需要满足其他要求：如高并发（同时有1千万人给B转账，需要快速处理）、高可靠（服务不会随意宕机）</li></ul><p>总的来说，ACID是事务的基本性质，必须要满足ACID特性，才能够保证事务的执行是正确的，不会发生意想不到的错误，也即ACID特性是事务正确性的前提。</p><h2 id="二、发展历史">二、发展历史</h2><p>人工-&gt;文件-&gt;DB</p><h3 id="1-DBMS模型">1.DBMS模型</h3><ul><li>网状模型：用有向图表示实体和实体之间的联系的模型</li><li>层次模型：用树形结构表示实体与实体的层次关系</li><li>关系模型（关系型数据库）：将关系用二维表形式表示</li></ul><h2 id="三、关键技术">三、关键技术</h2><h3 id="1-SQL引擎——Parser">1.SQL引擎——Parser</h3><p>主要包括词法分析、语法分析、语义分析等过程<br>词法分析主要是将SQL语句拆分为关键字、目标表、列名、常数、运算符等部分，语法分析分析出SQL语句各个部分的构成，再通过语义分析是否合法。</p><h3 id="2-Optimizer">2.Optimizer</h3><p>为什么使用Optimizer：可以有效简化计算和执行路径，有效提高SQL语句的执行性能。<br>（1）RBO（基于规则的优化器）<br>条件化简：通过数据流和执行流分析表达式最简单的形式，如<code>a = 5 and b &gt; a</code>可以化简为<code>a = 5 and b &gt; 5</code>。<br>表连接优化：总是小表先连接<br>Scan优化<br>（2）CBO（基于代价的优化器）<br>选择代价最低的执行方案</p><h3 id="3-Executor">3.Executor</h3><p>（1）火山模型：思路是向下访问（每个Operator访问下层Operator），向上求解（每个Operator求解出结果后返回上层）<br>优点：低耦合，逻辑简单<br>缺点：函数调用多，效率低<br>（2）向量化：一次计算一批数据，向上层返回一个向量<br>优点：性能更好（Cache命中率高、可以利用SIMD机制等）<br>（3）编译执行</p><h3 id="4-存储引擎：InnoDB">4.存储引擎：InnoDB</h3><p>存储引擎负责了数据的底层存储、管理和访问工作。5.6之后的的版本MySQL默认存储引擎为Innodb,它具有支持事务,支持外键,支持行级锁以及崩溃恢复等特性,是目前比较优秀的存储引擎。</p><ul><li>Buffer Pool：存储引擎位于内存中的重要结构，用于缓存数据，减少磁盘IO的开销。在实际使用过程中采用了冷热分离机制，减少了热数据频繁切入切出的开销。</li><li>Page：存储基本单位（类似于操作系统中的页机制）</li><li>B+树：索引结构</li></ul><h3 id="5-事务引擎">5.事务引擎</h3><ul><li>UndoLog：保证原子性，当原子操作未完成时，依赖Log进行回滚</li><li>锁：保证隔离性</li><li>MVCC：保证隔离性，读写不阻塞，可以防止死锁</li><li>持久性：一是在事务提交前写入磁盘，二是维护Redo Log，若写入前发生故障，MySQL会根据Log重做事务。</li></ul>]]></content>
       
       
       <categories>
           
-          <category> web </category>
+          <category> database </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> web </tag>
+            <tag> database </tag>
             
         </tags>
       
@@ -132,6 +107,31 @@
             <tag> golang </tag>
             
             <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>消息队列概述</title>
+      <link href="/2024/09/test4/"/>
+      <url>/2024/09/test4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="提醒">提醒</h2><p>巨水无比，最水的一集</p><h2 id="一、消息队列应用场景">一、消息队列应用场景</h2><p>最常见的是：解耦、削峰、异步、日志处理</p><ul><li>解耦：各个模块只需要对消息队列进行操作，业务逻辑相对独立。</li><li>削峰：可以控制流量，避免业务挂掉。</li><li>异步：如果下游接口返回的数据不是必要的，则可以将用户请求交给消息队列，消息队列交给下游的模块接口处理，用户不必等待所有接口处理完成返回，也可以缓解串行处理的时延问题。</li><li>日志处理：可以处理大规模日志数据的传输问题（类似于削峰）</li></ul><h2 id="二、Kafka">二、Kafka</h2><h3 id="1-适用场景">1.适用场景</h3><p>直播、订单、搜索服务</p><h3 id="2-使用方法">2.使用方法</h3><p>创建Kafka集群-&gt;创建Topic-&gt;设计生产者逻辑，初始化生产者，发送消息-&gt;设计消费者逻辑，初始化消费者，接收消息</p><h3 id="3-基本概念">3.基本概念</h3><p>Kafka的基础架构为：</p><ul><li>Topic：逻辑队列，一个 Topic 中拥有多个Partition（Kafka的物理分区）。一个Topic看作是一组具有相同主题的消息。</li><li>Cluster：物理集群，每个集群中可以建立多个不同的 Topic。</li><li>Producer：生产者，负责将业务消息发送到 Topic 中。</li><li>Consumer：消费者，负责接收并处理Topic 中的消息。</li><li>ConsumerGroup：消费者组，包含多个消费者，每个消费者的消费进度互不干涉。<br>Kafka中的其他基本概念</li><li>Offset：消息在 Partition 内的相对位置信息，可以理解为唯一 ID，在 Partition 内部严格递增。我们可以利用 Partition 和Offset唯一地定位一个消息</li><li>Replica：Partition 的副本，主要作用是容灾，这些副本有着不同的角色，分别是 Leader 和 Follower。Leader 对外提供数据；Follower 会拉取 Leader 的数据进行同步，但不提供服务，如果 Leader 挂掉了，可以将 Follower 提升成 Leader 再对外进行服务。</li><li>ISR（In-Sync Replica）：当Follower与Leader差距较小时，可以被纳入ISR。ISR中的Follower可以升为Leader。</li><li>ZooKeeper ：存储集群元数据</li></ul><h3 id="4-Kafka运行流程">4.Kafka运行流程</h3><h4 id="4-1-数据流">4.1 数据流</h4><p>主要流程是Producer-&gt;Broker-&gt;Consumer</p><h4 id="4-2-Producer-端">4.2 Producer 端</h4><p>在Producer端的主要优化是批量发送。因为Producer将消息发送给Broker后，需要接收确认消息，批量发送可以有效减少交互次数，减少IO次数，提高交互效率<br>在消息容量太大，带宽较小的场景下，Kafka会对数据进行压缩，减少消息的大小，有效利用带宽资源</p><h4 id="4-3-Broker端">4.3 Broker端</h4><p>Broker写入使用顺序写入，减少磁盘寻道成本<br>Consumer 请求消息时会发送 FetchRequest ，Broker 通过索引取出消息，按照时间窗口和信息大小发送给 Consumer。<br>Broker的有两种文件索引方式，通常使用二分法查找目标的位置<br>kafka 拷贝数据的流程不经过用户态空间，而是在读取磁盘后直接将 Read Buffer 中的数据传输到 NIC Buffer，通过 NIC Buffer 直接交付给消费者进程。这种方式减少了拷贝次数，有效提高了效率。</p><h4 id="4-4-缺点">4.4 缺点</h4><ul><li>运维成本高</li><li>负载不均衡</li><li>需要依赖于Page Cache</li><li>若Controller和Coordinator与Broker在同一个进程中，大量 I/O 会导致性能下降。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
             
         </tags>
       
@@ -294,9 +294,9 @@
       
         <tags>
             
-            <tag> web </tag>
-            
             <tag> python </tag>
+            
+            <tag> web </tag>
             
             <tag> flask </tag>
             
@@ -323,9 +323,9 @@
       
         <tags>
             
-            <tag> web </tag>
-            
             <tag> python </tag>
+            
+            <tag> web </tag>
             
         </tags>
       
@@ -736,7 +736,7 @@
       <link href="/2022/07/hello-world/"/>
       <url>/2022/07/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><hr><p>更新于2023.11.24 <s>（虽然上面有更新时间）</s>(不准，还是看这个吧)</p><h2 id="环境安装">环境安装</h2><p>正好装了台新电脑，环境还是要配的。</p><h3 id="Windows">Windows</h3><p>懒了。<br>确切来说前几天帮人做了个nodejs做的electron项目，结果环境怎么都配不好（悲），遂放弃在Windows上继续折腾nodejs的想法。</p><h3 id="MacOS">MacOS</h3><p>没有，如果有好心人v我一个就试试</p><h3 id="Linux（Ubuntu）">Linux（Ubuntu）</h3><p>因为Linux发行版强大的包管理器（如apt,pacman），所以在Linux上配置环境相对来说是一件比较舒服的事情。Linux虚拟机折腾崩了还可以直接回滚。<br>因此主要在Ubuntu上折腾了一下（其他发行版懒得试了，除非我以后有想法换主力操作系统。btw，如果我想换主力操作系统，为什么不用Mac？）</p><h3 id="1-安装nodejs">1.安装nodejs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure><p>这是比较简单的安装方法，也可以参考网上的方法安装较新版本的。不过我一般是能偷懒就偷懒，这儿照例偷个小懒。</p><h3 id="2-安装hexo">2.安装hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cil</span><br></pre></td></tr></table></figure><p>这之后使用官方给出的命令进行测试</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>看到这个就成了<br><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20180738.png" alt="效果"></p><h3 id="3-配置主题">3.配置主题</h3><p>懒了(雾），根据官方文档和自己喜好配置即可。</p><h3 id="4-部署到github">4.部署到github</h3><p>修改<code>_config.yml</code>文件(整个项目下的，不是themes下的)，主要修改<code>repository</code>和<code>branch</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/username/repo_name</span><br><span class="line">  branch: main </span><br></pre></td></tr></table></figure><p>可以使用ssh传到github，也可以使用用户名+token，这里演示后一种。<br>进入github，点击头像-&gt;settings-&gt; Deployer Settings-&gt;Personal Access Token-&gt;Token，选择Generate new token创建token。创建的token记得保存，因为刷新以后就看不到了。<br>使用<code>hexo d</code>,输入用户名和token即可。<br>效果：这个页面</p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><hr><p>更新于2023.11.24 <s>（虽然上面有更新时间）</s>(不准，还是看这个吧)</p><h2 id="环境安装">环境安装</h2><p>正好装了台新电脑，环境还是要配的。</p><h3 id="Windows">Windows</h3><p>懒了。<br>确切来说前几天帮人做了个nodejs做的electron项目，结果环境怎么都配不好（悲），遂放弃在Windows上继续折腾nodejs的想法。</p><h3 id="MacOS">MacOS</h3><p>没有，如果有好心人v我一个就试试</p><h3 id="Linux（Ubuntu）">Linux（Ubuntu）</h3><p>因为Linux发行版强大的包管理器（如apt,pacman），所以在Linux上配置环境相对来说是一件比较舒服的事情。Linux虚拟机折腾崩了还可以直接回滚。<br>因此主要在Ubuntu上折腾了一下（其他发行版懒得试了，除非我以后有想法换主力操作系统。btw，如果我想换主力操作系统，为什么不用Mac？）</p><h3 id="1-安装nodejs">1.安装nodejs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure><p>这是比较简单的安装方法，也可以参考网上的方法安装较新版本的。不过我一般是能偷懒就偷懒，这儿照例偷个小懒。</p><h3 id="2-安装hexo">2.安装hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cil</span><br></pre></td></tr></table></figure><p>这之后使用官方给出的命令进行测试</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>看到这个就成了<br><img src="%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20180738.png" alt="效果"></p><h3 id="3-配置主题">3.配置主题</h3><p>懒了(雾），根据官方文档和自己喜好配置即可。</p><h3 id="4-部署到github">4.部署到github</h3><p>修改<code>_config.yml</code>文件(整个项目下的，不是themes下的)，主要修改<code>repository</code>和<code>branch</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/username/repo_name</span><br><span class="line">  branch: main </span><br></pre></td></tr></table></figure><p>可以使用ssh传到github，也可以使用用户名+token，这里说说后一种。<br>进入github，点击头像-&gt;settings-&gt; Deployer Settings-&gt;Personal Access Token-&gt;Token，选择Generate new token创建token。创建的token记得保存，因为刷新以后就看不到了。<br>使用<code>hexo d</code>,输入用户名和token即可。<br>效果：这个页面</p>]]></content>
       
       
       <categories>
